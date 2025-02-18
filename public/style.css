@@ -1,0 +1,58 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #333;
+  }
+  .header {
+    background: #32329f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .endpoint {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .endpoint h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+  }
+  .http-method {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-right: 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .get { background-color: #61affe; }
+  .post { background-color: #49cc90; }
+  .put { background-color: #fca130; }
+  .delete { background-color: #f93e3e; }
+  .sample {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  .section-title {
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }

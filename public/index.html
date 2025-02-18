@@ -1,38 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>API Documentation</title>
+  <link href="./style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <h1> REST API</h1>
-    <h5> Free fake and reliable API for testing and prototyping </h5>
-    <h3> When to use</h3>
-    <p> REST API is a free online API that you can use whenever you need some fake data. It can be in a README on GitHub or simply to test things locally.</p>
-    <h3> Resources </h3>
-    <ul>
-        <li> /users </li>
-        <li> /incomes</li>
-        <li> /expenses </li>
-    </ul>
-    <h3> Routes</h3>
-    <ul>
-        <li> GET /users </li>
-        <li> GET /incomes</li>
-        <li> GET /expenses </li>
-        <li> POST /users </li>
-        <li> POST /incomes</li>
-        <li> POST /expenses </li>
-        <li> PUT /users </li>
-        <li> PUT /incomes</li>
-        <li> PUT /expenses </li>
-        <li> DELETE /users </li>
-        <li> DELETE /incomes</li>
-        <li> DELETE /expenses </li>
+  <div class="header">
+    <h1>Wealth Tracker API</h1>
+    <p>An overview of available endpoints</p>
+  </div>
+  <div class="container">
 
-    </ul>
+    <!-- Users Endpoints -->
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /users
+      </h2>
+      <p>Retrieve all users.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+[{
+  "id": "abc123",
+  "name": "Femi Ola",
+  "username": "Femi",
+  "email": "olumofemi@soezontech.com",
+  "address": {
+    "street": "Panatella Drive",
+    "suite": "Apt. 556",
+    "city": "Calgary",
+    "zipcode": "T3J 3W2"
+  }
+}]
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /users/{id}
+      </h2>
+      <p>Retrieve a specific user by ID.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+{
+  "id": "abc123",
+  "name": "Femi Ola",
+  "username": "Femi",
+  "email": "olumofemi@soezontech.com",
+  "address": {
+    "street": "Panatella Drive",
+    "suite": "Apt. 556",
+    "city": "Calgary",
+    "zipcode": "T3J 3W2"
+  }
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method post">POST</span> /users
+      </h2>
+      <p>Create a new user.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "name": "Femi Ola",
+  "username": "Femi",
+  "email": "olumofemi@soezontech.com",
+  "address": {
+    "street": "Panatella Drive",
+    "suite": "Apt. 556",
+    "city": "Calgary",
+    "zipcode": "T3J 3W2"
+  }
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method put">PUT</span> /users/{id}
+      </h2>
+      <p>Update an existing user.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "name": "Updated Name",
+  "username": "UpdatedUsername",
+  "email": "updatedemail@example.com",
+  "address": {
+    "street": "New Street",
+    "suite": "New Suite",
+    "city": "New City",
+    "zipcode": "12345"
+  }
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method delete">DELETE</span> /users/{id}
+      </h2>
+      <p>Delete a user.</p>
+    </div>
+
+    <!-- Income Endpoints -->
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /income
+      </h2>
+      <p>Retrieve all income records.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+[{
+  "id": "inc-001",
+  "wages": 1400,
+  "secondaryIncome": 700,
+  "interest": 120,
+  "supportPayment": 40,
+  "others": 100
+}]
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /income/{id}
+      </h2>
+      <p>Retrieve a specific income record by ID.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+{
+  "id": "inc-001",
+  "wages": 1400,
+  "secondaryIncome": 700,
+  "interest": 120,
+  "supportPayment": 40,
+  "others": 100
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method post">POST</span> /income
+      </h2>
+      <p>Create a new income record.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "wages": 1400,
+  "secondaryIncome": 700,
+  "interest": 120,
+  "supportPayment": 40,
+  "others": 100
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method put">PUT</span> /income/{id}
+      </h2>
+      <p>Update an existing income record.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "wages": 1500,
+  "secondaryIncome": 750,
+  "interest": 130,
+  "supportPayment": 45,
+  "others": 110
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method delete">DELETE</span> /income/{id}
+      </h2>
+      <p>Delete an income record.</p>
+    </div>
+
+    <!-- Expenses Endpoints -->
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /expenses
+      </h2>
+      <p>Retrieve all expense records.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+[{
+  "id": "exp-001",
+  "name": "Monthly Expenses",
+  "items": {
+    "HouseRent": 700,
+    "LightBill": 400,
+    "GasBill": 300,
+    "Groceries": 200,
+    "Others": 100
+  },
+  "total": 1700
+}]
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method get">GET</span> /expenses/{id}
+      </h2>
+      <p>Retrieve a specific expense record by ID.</p>
+      <div class="section-title">Sample Response</div>
+      <div class="sample">
+{
+  "id": "exp-001",
+  "name": "Monthly Expenses",
+  "items": {
+    "HouseRent": 700,
+    "LightBill": 400,
+    "GasBill": 300,
+    "Groceries": 200,
+    "Others": 100
+  },
+  "total": 1700
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method post">POST</span> /expenses
+      </h2>
+      <p>Create a new expense record.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "name": "Monthly Expenses",
+  "items": {
+    "HouseRent": 700,
+    "LightBill": 400,
+    "GasBill": 300,
+    "Groceries": 200,
+    "Others": 100
+  },
+  "total": 1700
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method put">PUT</span> /expenses/{id}
+      </h2>
+      <p>Update an existing expense record.</p>
+      <div class="section-title">Sample Payload</div>
+      <div class="sample">
+{
+  "name": "Updated Expenses",
+  "items": {
+    "HouseRent": 750,
+    "LightBill": 420,
+    "GasBill": 320,
+    "Groceries": 220,
+    "Others": 110
+  },
+  "total": 1820
+}
+      </div>
+    </div>
+
+    <div class="endpoint">
+      <h2>
+        <span class="http-method delete">DELETE</span> /expenses/{id}
+      </h2>
+      <p>Delete an expense record.</p>
+    </div>
+
+  </div>
 </body>
 </html>
-
-
